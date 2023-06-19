@@ -1,0 +1,40 @@
+.invoker {
+    animation: changebg ease 5s;
+    color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@keyframes changebg {
+    0% {
+        transform: translateX(100%);
+
+        color: #ff0000;
+    }
+    15% {
+        color: yellow;
+    }
+    30% {
+        color: #fff;
+    }
+    45% {
+        color: rgb(255, 0, 183);
+    }
+    60% {
+        color: rgba(0, 202, 255, 0.97);
+    }
+    75% {
+        color: rgba(22, 255, 0, 0.97);
+    }
+    85% {
+        color: #000000;
+    }
+    100% {
+        color: rgba(0, 0, 0, 0);
+        transform: translateX(-100%);
+    }
+}
