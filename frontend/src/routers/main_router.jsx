@@ -8,7 +8,8 @@ import Projects from "../components/projects.jsx";
 const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
-                <user_theme.Provider value={window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark': 'light'}>
+                // replace light instead of dark when query doesn't match
+                <user_theme.Provider value={window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark': 'dark'}>
                         <App/>
                 </user_theme.Provider>
             }>
