@@ -132,7 +132,7 @@ env_variables.env
 /postgres/volume/
 db.env
 /backend/*/migrations/*
-/backend/*/migrations/__init__.py
+!/backend/*/migrations/__init__.py
 secret.sql
 /postgres
 secret_key.env

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Resume, Skill
+from .models import Skill, Resume
 
 
 class ResumeSerializer(serializers.ModelSerializer):
@@ -14,6 +14,6 @@ class ResumeSerializer(serializers.ModelSerializer):
             skill_lists = []
             new_skills = skills.filter(tag=i[0])
             for j in new_skills:
-                skill_lists.append(j.name)
+                skill_lists.append([j.name, j.tier])
             data[i[1]] = skill_lists
         return data

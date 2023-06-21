@@ -1,0 +1,19 @@
+.resume_skills{
+    color: white;
+    background-color: rgba(124, 122, 122, 0.31);
+    border: 1px #565656 dashed;
+    margin: 0.5%;
+}
+.resume_skills ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+}
+.resume_skills li{
+    margin: 3%;
+    border-radius: 5%;
+    color: red;
+    font-weight: bolder;
+    border-bottom: 1px cyan solid;
+}
