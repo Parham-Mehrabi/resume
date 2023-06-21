@@ -19,10 +19,10 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around w-100">
                         <li className='nav-item'>
-                            <NavLink className='nav-link' aria-current="page" to="/Resume">Resume</NavLink>
+                            <NavLink className='nav-link' to="/Projects">Projects</NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to="/Projects">Projects</NavLink>
+                            <NavLink className='nav-link' aria-current="page" to="/Resume">About me</NavLink>
                         </li>
                         <li className='nav-item'>
                             <NavLink className='nav-link' to="/Contact" tabIndex="-1" aria-disabled="true">Contact

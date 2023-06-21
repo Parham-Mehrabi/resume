@@ -13,7 +13,17 @@
 .resume_skills li{
     margin: 3%;
     border-radius: 5%;
-    color: red;
     font-weight: bolder;
-    border-bottom: 1px cyan solid;
+}
+.skill_tier_0{
+    color: #ccc587;
+}
+.skill_tier_1{
+    color: #ffee00;
+    border-bottom: rgba(255, 0, 0, 0.23) solid 1px;
+}
+.skill_tier_2{
+    color: #ffec00;
+    border-bottom: rgba(255, 0, 0, 0.66) solid 1px;
+    animation: kami_skill 5s infinite;
 }
