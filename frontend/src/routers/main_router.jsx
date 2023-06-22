@@ -5,13 +5,18 @@ import Resume from "../components/resume.jsx";
 import user_theme from "../contexts/theme.jsx";
 import Contact from "../components/contact.jsx";
 import Projects from "../components/projects.jsx";
+import base_url from "../contexts/base_url.jsx";
+
 const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
                 // replace light instead of dark when query doesn't match
-                <user_theme.Provider value={window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark': 'dark'}>
+                <base_url.Provider value={'http://127.0.0.1:8000/back/'}>
+                    <user_theme.Provider
+                        value={window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'}>
                         <App/>
-                </user_theme.Provider>
+                    </user_theme.Provider>
+                </base_url.Provider>
             }>
                 <Route path='/resume' element={<Resume/>}/>
                 <Route path='/projects' element={<Projects/>}/>
