@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 
     # Apps:
     'resume',
+    'projects',
 
     # Package
     'rest_framework',
