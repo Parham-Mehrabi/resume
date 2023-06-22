@@ -1,9 +1,11 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import '../styles/resume.css'
+import base_url from "../contexts/base_url.jsx";
 
 export default function Resume() {
     useEffect(() => getResume, [])
     const [resume, setResume] = useState()
+    const baseUrl = useContext(base_url)
     return (
         <div className='text-white m-0 p-0'>
             {resume && resume['body'] ? (
@@ -74,8 +76,7 @@ export default function Resume() {
     )
 
     async function getResume() {
-        const response = await fetch('http://127.0.0.1:8000/back/resume')
-        // TODO: use base_url instead of hand coded url
+        const response = await fetch(baseUrl + 'resume')
         const data = await response.json()
         setResume(data)
     }
