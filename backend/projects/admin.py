@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tags, Project
+from .models import Tag, Project
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -9,4 +9,4 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(Tags)
+admin.site.register(Tag)

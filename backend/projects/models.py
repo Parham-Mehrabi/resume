@@ -13,7 +13,7 @@ class Project(models.Model):
     ]
 
     name = models.CharField(max_length=248)
-    tags = models.ManyToManyField('Tags')
+    tags = models.ManyToManyField('Tag')
 
     github_link = models.CharField(max_length=120, blank=True, null=True)
     project_link = models.CharField(max_length=120, blank=True, null=True)
@@ -22,7 +22,7 @@ class Project(models.Model):
     status = models.SmallIntegerField(choices=STATUS_CHOICES)
 
 
-class Tags(models.Model):
+class Tag(models.Model):
     """
         a model which contains tags, tags are the labels that are declare the technologies used in a project
     """
