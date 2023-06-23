@@ -4,8 +4,8 @@ import App from "../App.jsx";
 import Resume from "../components/resume.jsx";
 import user_theme from "../contexts/theme.jsx";
 import Contact from "../components/contact.jsx";
-import Projects from "../components/projects.jsx";
-import ProjectDetails from "../components/project_details.jsx";
+import Projects from "../components/projects/projects.jsx";
+import ProjectDetails from "../components/projects/project_details.jsx";
 import base_url from "../contexts/base_url.jsx";
 const router = createBrowserRouter(
         createRoutesFromElements(

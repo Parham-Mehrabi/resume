@@ -1,5 +1,5 @@
 import {useContext, useEffect, useState} from "react";
-import base_url from "../contexts/base_url.jsx";
+import base_url from "../../contexts/base_url.jsx";
 import {useNavigate} from "react-router-dom";
 
 export default function () {
@@ -54,7 +54,7 @@ export default function () {
                                             <td className='border border-info'>
                                                 <div className='row'>
                                                     {p['tags'].map(s => {
-                                                        return <p className='col-2' key={s}>{s}</p>
+                                                        return <p className='col-12 col-xs-8 col-sm-5 col-md-3 col-lg-2' key={s}>{s}</p>
                                                     })}
                                                 </div>
                                             </td>
