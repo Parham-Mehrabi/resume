@@ -92,7 +92,7 @@ export default function () {
     }
 
     function goToProject(id) {
-        navigate('/Projects/' + id)
+        navigate('/Projects/' + id, )
     }
 
     function fadeByID(id) {

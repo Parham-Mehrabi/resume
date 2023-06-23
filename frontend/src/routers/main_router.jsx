@@ -5,8 +5,8 @@ import Resume from "../components/resume.jsx";
 import user_theme from "../contexts/theme.jsx";
 import Contact from "../components/contact.jsx";
 import Projects from "../components/projects.jsx";
+import ProjectDetails from "../components/project_details.jsx";
 import base_url from "../contexts/base_url.jsx";
-
 const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
@@ -20,7 +20,8 @@ const router = createBrowserRouter(
             }>
                 <Route path='/resume' element={<Resume/>}/>
                 <Route path='/projects' element={<Projects/>}/>
-                <Route path='/contact' element={<Contact/>}/>projects
+                <Route path='/projects/:id' element={<ProjectDetails/>}/>
+                <Route path='/contact' element={<Contact/>}/>
             </Route>
         )
     )
