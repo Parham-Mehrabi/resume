@@ -8,7 +8,7 @@ import Projects from "../components/projects/projects.jsx";
 import ProjectDetails from "../components/projects/project_details.jsx";
 import base_url from "../contexts/base_url.jsx";
 import IndexPage from '../components/index.jsx'
-
+import Gallery from "../components/gallery/gallery.jsx";
 const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
@@ -25,7 +25,7 @@ const router = createBrowserRouter(
                 <Route path='/projects' element={<Projects/>}/>
                 <Route path='/projects/:id' element={<ProjectDetails/>}/>
                 <Route path='/contact' element={<Contact/>}/>
-                <Route path='/Gallery' element={<Contact/>}/>
+                <Route path='/Gallery' element={<Gallery/>}/>
             </Route>
         )
     )
