@@ -136,3 +136,4 @@ db.env
 secret.sql
 /postgres
 secret_key.env
+media/
