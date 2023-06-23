@@ -1,7 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.esm.min.js'
-import 'bootstrap/dist/js/bootstrap.min.js'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import {Outlet} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import HomeLoading from "./components/home_loading.jsx";
@@ -29,6 +26,7 @@ function App() {
         if (theme === 'dark') {
             setThemeState('dark')
             document.documentElement.style.backgroundColor = 'rgb(4,10,24)';
+            document.documentElement.className = 'parham-scroll';
         } else {
             setThemeState('light')
             document.documentElement.style.backgroundColor = 'rgba(178,177,177,0.86)';

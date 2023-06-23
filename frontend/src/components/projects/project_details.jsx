@@ -10,7 +10,6 @@ export default function () {
     const baseUrl = useContext(base_url)
     const {id} = useParams()
     const [project, setProject] = useState()
-    const [projectImages, setProjectImages] = useState()
     return (
         project ? (<>
             <div className="container">
