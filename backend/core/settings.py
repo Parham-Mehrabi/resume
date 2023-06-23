@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-)lp_(9@)%a#)$5&z)f2$x!2-6nob*q13s1c78&_7hetm)&o_@(
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -119,4 +119,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # TODO: remove this CORS:
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://192.168.106.219:5173",
 ]

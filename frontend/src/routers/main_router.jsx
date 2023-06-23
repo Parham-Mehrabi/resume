@@ -11,7 +11,7 @@ const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
                 // replace light instead of dark when query doesn't match
-                <base_url.Provider value={'http://127.0.0.1:8000/back/'}>
+                <base_url.Provider value={'http://192.168.106.219:8000/back/'}>
                     <user_theme.Provider
                         value={window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'}>
                         <App/>
@@ -22,6 +22,7 @@ const router = createBrowserRouter(
                 <Route path='/projects' element={<Projects/>}/>
                 <Route path='/projects/:id' element={<ProjectDetails/>}/>
                 <Route path='/contact' element={<Contact/>}/>
+                <Route path='/Gallery' element={<Contact/>}/>
             </Route>
         )
     )

@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from "react";
 import '../styles/resume.css'
 import base_url from "../contexts/base_url.jsx";
-
+import Train from "../elements/train.jsx";
 export default function Resume() {
     useEffect(() => getResume, [])
     const [resume, setResume] = useState()
@@ -14,7 +14,9 @@ export default function Resume() {
                         hi im parham the web developer
                     </h2>
                     <p className='text-justify'>{resume['body']}</p>
-                    <hr/>
+                    <hr className='m-0 p-0' />
+                        <Train>i have some certificates for some of these and their pictures are available in gallery :D</Train>
+                    <hr className='m-0 p-0'/>
                     <div className='row'>
                         <div className='col-12 col-md-6'>
                             <div className='resume_skills h-100'>

@@ -8,4 +8,3 @@ export default function Train(props){
         </div>
     )
 }
-//TODO: unused

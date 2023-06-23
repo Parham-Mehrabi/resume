@@ -1,14 +1,14 @@
 .train {
     overflow: hidden;
     width: 100%;
-    padding-top: 10px;
     font-size: 18px;
-    color: #ff00c3;
+    color: #16fffc;
 }
 
 .train p {
     white-space: nowrap;
-    animation: marquee 15s linear infinite;
+    animation: marquee 25s linear infinite;
+    font-weight: bolder;
 }
 
 @keyframes marquee {
@@ -18,9 +18,4 @@
     100% {
         transform: translateX(-100%);
     }
-}
-
-.train span {
-    font-weight: bolder;
-    color: #309400;
 }
