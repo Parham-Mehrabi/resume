@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.esm.min.js'
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import {Outlet} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import HomeLoading from "./components/home_loading.jsx";
