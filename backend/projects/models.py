@@ -30,3 +30,13 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProjectImage(models.Model):
+    """
+        project pictures
+    """
+
+    project = models.ForeignKey(Project, on_delete=models.PROTECT)
+    picture = models.ImageField(upload_to='images/')
+    # TODO: change the path after deploy
