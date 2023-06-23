@@ -23,7 +23,7 @@ export default function Resume() {
                                 <h3 className='text text-center'>Django</h3>
                                 <ul className='row'>
                                     {resume['django'].map(skill => {
-                                        return <li className={'col-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
@@ -33,7 +33,7 @@ export default function Resume() {
                                 <h3 className='text text-center'>FrontEnd</h3>
                                 <ul className='row'>
                                     {resume['frontend'].map(skill => {
-                                        return <li className={'col-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
                                     })}
 
                                 </ul>
@@ -44,7 +44,7 @@ export default function Resume() {
                                 <h3 className='text text-center'>Node</h3>
                                 <ul className='row'>
                                     {resume['node'].map(skill => {
-                                        return <li className={'col-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
@@ -54,7 +54,7 @@ export default function Resume() {
                                 <h3 className='text text-center'>Linux</h3>
                                 <ul className='row'>
                                     {resume['linux'].map(skill => {
-                                        return <li className={'col-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
@@ -62,9 +62,9 @@ export default function Resume() {
                         <div className='col-12'>
                             <div className='resume_skills'>
                                 <h3 className='text text-center'>other skills</h3>
-                                <ul className='row'>
+                                <ul className='row '>
                                     {resume['others'].map(skill => {
-                                        return <li className={'col-1 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li className={'col-xs-12 col-sm-5 col-md-2 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
