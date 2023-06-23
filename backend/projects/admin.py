@@ -3,7 +3,7 @@ from .models import Tag, Project
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['status', 'name']
+    list_display = ['id', 'status', 'name']
     list_filter = ['tags', 'status']
     search_fields = ['name', 'tags', 'description']
 
