@@ -7,10 +7,12 @@ import Contact from "../components/contact.jsx";
 import Projects from "../components/projects/projects.jsx";
 import ProjectDetails from "../components/projects/project_details.jsx";
 import base_url from "../contexts/base_url.jsx";
+import IndexPage from '../components/index.jsx'
+
 const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
-                // replace light instead of dark when query doesn't match
+                //TODO: replace light instead of dark when query doesn't match
                 <base_url.Provider value={'http://192.168.106.219:8000/back/'}>
                     <user_theme.Provider
                         value={window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'}>
@@ -18,6 +20,7 @@ const router = createBrowserRouter(
                     </user_theme.Provider>
                 </base_url.Provider>
             }>
+                <Route index element={<IndexPage/>}/>
                 <Route path='/resume' element={<Resume/>}/>
                 <Route path='/projects' element={<Projects/>}/>
                 <Route path='/projects/:id' element={<ProjectDetails/>}/>
