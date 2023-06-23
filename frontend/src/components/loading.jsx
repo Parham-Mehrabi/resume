@@ -1,6 +1,6 @@
 import '../styles/home_loading.css'
 
-export default function HomeLoading() {
+export default function Loading() {
     const styles = {
         height: '100vh',
         display: 'flex',
@@ -14,7 +14,7 @@ export default function HomeLoading() {
         <div style={styles}>
             <div className='overflow-hidden'>
             <h1 className='invoker text text-center'>I'm a beacon of knowledge blazing out across the black sea of ignorance</h1>
-            <small className='text text-secondary'>the site is loading data please wait . . .</small>
+            <small className='text text-secondary'>is loading please wait</small>
             </div>
         </div>
     )

@@ -3,6 +3,8 @@ import {useContext, useEffect, useState} from "react";
 import base_url from "../../contexts/base_url.jsx";
 import Pictures from './project_images.jsx'
 import '../../styles/project_details.css'
+import Loading from "../loading.jsx";
+
 
 export default function () {
     useEffect(() => getProjectDetails, [])
@@ -57,7 +59,11 @@ export default function () {
                 </div>
                 <Pictures>{id}</Pictures>
             </div>
-        </>) : null
+        </>) : (
+            <>
+                <Loading></Loading>
+            </>
+        )
     )
 
 

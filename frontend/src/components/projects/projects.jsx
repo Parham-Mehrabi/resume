@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from "react";
 import base_url from "../../contexts/base_url.jsx";
 import {useNavigate} from "react-router-dom";
-
+import Train from "../../elements/train.jsx";
 export default function () {
     const baseUrl = useContext(base_url)
     useEffect(() => getProject, [])
@@ -33,6 +33,8 @@ export default function () {
                     </h4>
                 </div>
                 <hr/>
+                <Train>Click on Project names for more Details.</Train>
+                <hr className='m-0 p-0'/>
                 <div className="table-responsive">
                     <table className='table table-dark table-striped text-center align-middle table-hover' id='da_table'>
                         <thead>
