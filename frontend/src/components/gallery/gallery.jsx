@@ -12,10 +12,8 @@ export default function () {
             <Certificates>{baseUrl}</Certificates>
             <hr/>
             <div className='text text-center small text-info m-2 p-2 border-bottom border-info'>
-            <small id='end_of_certificates'>click on photoes to get them fullscreen</small>
+            <small id='end_of_certificates'>click on photos to get them fullscreen</small>
             </div>
-
         </>
     )
-
 }

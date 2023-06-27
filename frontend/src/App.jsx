@@ -2,14 +2,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.esm.js'
 import {Outlet} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
-import HomeLoading from "./components/loading.jsx";
 import Navbar from "./components/navbar.jsx";
 import user_theme from "./contexts/theme.jsx";
 
 function App() {
     const theme = useContext(user_theme)
     const [themeState, setThemeState] = useState(theme)
-    useEffect(() => handleInit, [])
+    useEffect(() => {
+        handleInit()
+    }, [])
     return (
         <div className='text-white m-0 p-0' style={{
             backgroundColor: themeState === 'dark' ? 'rgb(4,10,24)' : 'rgba(178,177,177,0.86)',

@@ -1,17 +1,19 @@
 .parham-scroll {
     max-height: 300px;
-    scrollbar-color: #0d96ff #28b0a5;
+}
+*{
+scrollbar-color: #0d96ff #28b0a5;
 }
 
-.parham-scroll::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 15px;
 }
 
 
-.parham-scroll::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background-color: #011628;
 }
 
-.parham-scroll::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: #28b0a5;
 }

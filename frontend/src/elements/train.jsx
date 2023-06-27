@@ -1,4 +1,3 @@
-import '../styles/elements_train.css'
 
 export default function Train(props){
 

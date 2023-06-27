@@ -1,9 +1,8 @@
 import {useContext, useEffect, useState} from "react";
-import '../styles/resume.css'
 import base_url from "../contexts/base_url.jsx";
 import Train from "../elements/train.jsx";
 export default function Resume() {
-    useEffect(() => getResume, [])
+    useEffect(() => {getResume()}, [])
     const [resume, setResume] = useState()
     const baseUrl = useContext(base_url)
     return (

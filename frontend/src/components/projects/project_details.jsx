@@ -1,13 +1,12 @@
-import {Navigate, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import base_url from "../../contexts/base_url.jsx";
 import Pictures from './project_images.jsx'
-import '../../styles/project_details.css'
 import Loading from "../loading.jsx";
 
 
 export default function () {
-    useEffect(() => getProjectDetails, [])
+    useEffect(() => {getProjectDetails()}, [])
     const navigate = useNavigate()
     const baseUrl = useContext(base_url)
     const {id} = useParams()

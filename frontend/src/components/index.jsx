@@ -2,7 +2,7 @@ import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 
 export default function () {
-    useEffect(()=>goToProjects, [])
+    useEffect(()=>{goToProjects()}, [])
     const navigate = useNavigate()
     const styles = {
         display: 'flex',
@@ -27,7 +27,7 @@ export default function () {
     )
     function goToProjects(){
         setTimeout(
-            ()=>{navigate('Projects')}, 10000
+            ()=>{navigate('/Projects')}, 10000
         )
     }
 }

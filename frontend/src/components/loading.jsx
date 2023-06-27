@@ -1,4 +1,4 @@
-import '../styles/home_loading.css'
+
 
 export default function Loading() {
     const styles = {

@@ -1,12 +1,13 @@
 import {NavLink} from "react-router-dom";
-import '../styles/navbar.css'
 import user_theme from "../contexts/theme.jsx";
 import {useContext, useEffect, useState} from "react";
 
 export default function Navbar() {
     const theme = useContext(user_theme)
     const [navbarClasses, setNavbarClasses] = useState('')
-    useEffect(() => handleNavbarClasses, [])
+    useEffect(() => {
+        handleNavbarClasses()
+    }, [])
 
     return (
         <nav className={navbarClasses}>

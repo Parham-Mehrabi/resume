@@ -4,7 +4,9 @@ import {useNavigate} from "react-router-dom";
 import Train from "../../elements/train.jsx";
 export default function () {
     const baseUrl = useContext(base_url)
-    useEffect(() => getProject, [])
+    useEffect(() => {
+        getProject()
+    }, [])
     const [projects, setProjects] = useState()
     const navigate = useNavigate()
     return (
