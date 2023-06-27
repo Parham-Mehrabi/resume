@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Skill, Resume
+from .models import Skill, Resume, Certificate
 
 
 class ResumeSerializer(serializers.ModelSerializer):
@@ -17,3 +17,9 @@ class ResumeSerializer(serializers.ModelSerializer):
                 skill_lists.append([j.name, j.tier])
             data[i[1]] = skill_lists
         return data
+
+
+class CertificatesListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Certificate
+        fields = '__all__'
