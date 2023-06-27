@@ -37,4 +37,4 @@ class ProjectRetrieveSerializer(ListProjectSerializer):
 class ProjectImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectImage
-        fields = ['id', 'picture']
+        fields = ['id', 'picture', 'project']
