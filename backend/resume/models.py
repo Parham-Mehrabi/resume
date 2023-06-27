@@ -34,3 +34,16 @@ class Skill(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Certificate(models.Model):
+    """
+        a model for my certificates
+    """
+    name = models.CharField(max_length=256, verbose_name='certificate or course name')
+    certificate_source = models.CharField(max_length=256)
+    course_main_master = models.CharField(max_length=256, null=True, blank=True)
+    score = models.CharField(max_length=128, blank=True, null=True)
+
+    image = models.ImageField(upload_to='certificates/')
+    # TODO: change this path after deploy
