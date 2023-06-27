@@ -34,3 +34,11 @@ class ProjectImagesAPI(ListAPIView):
     def get_queryset(self):
         images = ProjectImage.objects.filter(project_id=self.kwargs['id'])
         return images
+
+
+class ListProjectsImages(ListAPIView):
+    """
+        this endpoint return all projects photos
+    """
+    queryset = ProjectImage.objects.all()
+    serializer_class = ProjectImageSerializer

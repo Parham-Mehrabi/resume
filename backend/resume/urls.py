@@ -3,5 +3,5 @@ from .views import GetResume
 
 
 urlpatterns = [
-    path('', GetResume.as_view(), name='resume')
+    path('', GetResume.as_view(), name='resume'),
 ]
