@@ -14,7 +14,7 @@ class ResumeSerializer(serializers.ModelSerializer):
             skill_lists = []
             new_skills = skills.filter(tag=i[0])
             for j in new_skills:
-                skill_lists.append([j.name, j.tier])
+                skill_lists.append([j.name, j.tier, j.id])
             data[i[1]] = skill_lists
         return data
 

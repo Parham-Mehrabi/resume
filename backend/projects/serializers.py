@@ -31,7 +31,11 @@ class ProjectRetrieveSerializer(ListProjectSerializer):
     """
         this serializer used to Retrieve a single Project
     """
-    pass
+    technologies = serializers.SlugRelatedField(
+        many=True,
+        slug_field='name',
+        read_only=True
+    )
 
 
 class ProjectImageSerializer(serializers.ModelSerializer):

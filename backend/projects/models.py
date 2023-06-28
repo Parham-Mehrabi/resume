@@ -1,4 +1,5 @@
 from django.db import models
+from resume.models import Skill
 
 
 class Project(models.Model):
@@ -14,7 +15,7 @@ class Project(models.Model):
 
     name = models.CharField(max_length=248)
     tags = models.ManyToManyField('Tag')
-
+    technologies = models.ManyToManyField(Skill)
     github_link = models.CharField(max_length=120, blank=True, null=True)
     project_link = models.CharField(max_length=120, blank=True, null=True)
 
@@ -26,7 +27,7 @@ class Tag(models.Model):
     """
         a model which contains tags, tags are the labels that are declare the technologies used in a project
     """
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name

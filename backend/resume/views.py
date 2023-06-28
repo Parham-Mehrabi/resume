@@ -25,8 +25,8 @@ class CertificatesList(ListAPIView):
 
 class RetrieveSkillApi(RetrieveAPIView):
     serializer_class = SkillSerializer
-    lookup_field = 'id'
+    lookup_field = 'name'
 
     def get_object(self):
-        data = get_object_or_404(Skill, id=self.kwargs['id'])
+        data = get_object_or_404(Skill, name=self.kwargs['name'])
         return data

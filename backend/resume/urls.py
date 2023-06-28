@@ -5,6 +5,7 @@ from .views import GetResume, CertificatesList, RetrieveSkillApi
 urlpatterns = [
     path('', GetResume.as_view(), name='resume'),
     path('certificates/', CertificatesList.as_view(), name='certificates'),
-    path('skill/<int:id>', RetrieveSkillApi.as_view(), name='retrieve-skill')
+    path('skill/<str:name>', RetrieveSkillApi.as_view(), name='retrieve-skill'),
 ]
-# TODO: add a new end point to retrieve skills
+# TODO: add and use slug field for instead of skill name
+
