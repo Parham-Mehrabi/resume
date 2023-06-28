@@ -9,6 +9,8 @@ import ProjectDetails from "../components/projects/project_details.jsx";
 import base_url from "../contexts/base_url.jsx";
 import IndexPage from '../components/index.jsx'
 import Gallery from "../components/gallery/gallery.jsx";
+import Skills from "../components/skills.jsx";
+
 const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
@@ -21,9 +23,14 @@ const router = createBrowserRouter(
                 </base_url.Provider>
             }>
                 <Route index element={<IndexPage/>}/>
-                <Route path='/resume' element={<Resume/>}/>
-                <Route path='/projects' element={<Projects/>}/>
-                <Route path='/projects/:id' element={<ProjectDetails/>}/>
+                <Route path='/resume'>
+                    <Route index element={<Resume/>}/>
+                    <Route path=':name' element={<Skills/>}/>
+                </Route>
+                <Route path='/projects'>
+                    <Route index element={<Projects/>}/>
+                    <Route path=':id' element={<ProjectDetails/>}/>
+                </Route>
                 <Route path='/contact' element={<Contact/>}/>
                 <Route path='/Gallery' element={<Gallery/>}/>
             </Route>

@@ -6,7 +6,9 @@ import Loading from "../loading.jsx";
 
 
 export default function () {
-    useEffect(() => {getProjectDetails()}, [])
+    useEffect(() => {
+        getProjectDetails()
+    }, [])
     const navigate = useNavigate()
     const baseUrl = useContext(base_url)
     const {id} = useParams()
@@ -26,17 +28,14 @@ export default function () {
                             <p className='fw-bolder text text-info text-capitalize'> i used following technologies in
                                 this project : </p>
                             <ul className='list-group overflow-auto parham-scroll rounded-0'>
-                                {project['tags'].map(skill => {
-                                    return <li className='list-group-item list-group-item-info'>{skill}</li>
+                                {project['technologies'].map(skill => {
+                                    return <li className='list-group-item list-group-item-info'
+                                               onClick={() => {
+                                                   navigate('/Resume/' + (skill))
+                                               }}>
+                                        {skill}</li>
 
                                 })}
-                                <li className='list-group-item list-group-item-info'>skill</li>
-                                <li className='list-group-item list-group-item-info'>skill</li>
-                                <li className='list-group-item list-group-item-info'>skill</li>
-                                <li className='list-group-item list-group-item-info'>skill</li>
-                                <li className='list-group-item list-group-item-info'>skill</li>
-                                <li className='list-group-item list-group-item-info'>skill</li>
-                                <li className='list-group-item list-group-item-info'>skill</li>
                             </ul>
                         </div>
                     </div>
@@ -54,6 +53,16 @@ export default function () {
                                 className={project['status'] === 'finished' ? ('text-success') : (project['status'] === 'developing' ? 'text-danger' : 'text-warning')}>{project['status']}</strong>
                             </h3>
                         </div>
+                        <div className='border border-info m-3 p-3'>
+                            <p className='fw-bolder text text-info text-capitalize'> Project labels
+                                this project : </p>
+                            <ul className='list-group overflow-auto parham-scroll rounded-0'>
+                                {project['tags'].map(tag => {
+                                    return <li className='text text-center list-group-item list-group-item-info'>
+                                        {tag}</li>
+                                })}
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <Pictures>{id}</Pictures>
@@ -68,10 +77,10 @@ export default function () {
 
     async function getProjectDetails() {
         const response = await fetch(baseUrl + 'project/' + id)
-        if (response.status === 200){
-        const data = await response.json()
-        setProject(data)
-        }else if(response.status === 404){
+        if (response.status === 200) {
+            const data = await response.json()
+            setProject(data)
+        } else if (response.status === 404) {
             navigate('/projects')
         }
 

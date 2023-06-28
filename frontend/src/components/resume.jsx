@@ -1,8 +1,13 @@
 import {useContext, useEffect, useState} from "react";
 import base_url from "../contexts/base_url.jsx";
 import Train from "../elements/train.jsx";
+import {parsePath, useNavigate} from "react-router-dom";
+
 export default function Resume() {
-    useEffect(() => {getResume()}, [])
+    useEffect(() => {
+        getResume()
+    }, [])
+    const navigate = useNavigate()
     const [resume, setResume] = useState()
     const baseUrl = useContext(base_url)
     return (
@@ -13,8 +18,9 @@ export default function Resume() {
                         hi im parham the web developer
                     </h2>
                     <p className='text-justify'>{resume['body']}</p>
-                    <hr className='m-0 p-0' />
-                        <Train>i have some certificates for some of these and their pictures are available in gallery :D</Train>
+                    <hr className='m-0 p-0'/>
+                    <Train>i have some certificates for some of these and their pictures are available in gallery
+                        :D</Train>
                     <hr className='m-0 p-0'/>
                     <div className='row'>
                         <div className='col-12 col-md-6'>
@@ -22,7 +28,12 @@ export default function Resume() {
                                 <h3 className='text text-center'>Django</h3>
                                 <ul className='row'>
                                     {resume['django'].map(skill => {
-                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li
+                                            onClick={() => {
+                                                navigate(skill[0])
+                                            }}
+                                            className={'col-xs-12 col-md-4 text text-center skill_tier_' + skill[1]}
+                                            key={'skill' + skill[2]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
@@ -32,7 +43,12 @@ export default function Resume() {
                                 <h3 className='text text-center'>FrontEnd</h3>
                                 <ul className='row'>
                                     {resume['frontend'].map(skill => {
-                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li
+                                            onClick={() => {
+                                                navigate(skill[0])
+                                            }}
+                                            className={'col-xs-12 col-md-4 text text-center skill_tier_' + skill[1]}
+                                            key={'skill' + skill[2]}>{skill[0]}</li>
                                     })}
 
                                 </ul>
@@ -43,7 +59,12 @@ export default function Resume() {
                                 <h3 className='text text-center'>Node</h3>
                                 <ul className='row'>
                                     {resume['node'].map(skill => {
-                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li
+                                            onClick={() => {
+                                                navigate(skill[0])
+                                            }}
+                                            className={'col-xs-12 col-md-4 text text-center skill_tier_' + skill[1]}
+                                            key={'skill' + skill[2]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
@@ -53,7 +74,12 @@ export default function Resume() {
                                 <h3 className='text text-center'>Linux</h3>
                                 <ul className='row'>
                                     {resume['linux'].map(skill => {
-                                        return <li className={'col-xs-12 col-md-4 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li
+                                            onClick={() => {
+                                                navigate(skill[0])
+                                            }}
+                                            className={'col-xs-12 col-md-4 text text-center skill_tier_' + skill[1]}
+                                            key={'skill' + skill[2]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
@@ -63,7 +89,12 @@ export default function Resume() {
                                 <h3 className='text text-center'>other skills</h3>
                                 <ul className='row '>
                                     {resume['others'].map(skill => {
-                                        return <li className={'col-xs-12 col-sm-5 col-md-2 text text-center skill_tier_'+ skill[1]}>{skill[0]}</li>
+                                        return <li
+                                            onClick={() => {
+                                                navigate(skill[0])
+                                            }}
+                                            className={'col-xs-12 col-sm-5 col-md-2 text text-center skill_tier_' + skill[1]}
+                                            key={'skill' + skill[2]}>{skill[0]}</li>
                                     })}
                                 </ul>
                             </div>
