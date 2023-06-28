@@ -27,7 +27,7 @@ export default function () {
     )
     function goToProjects(){
         setTimeout(
-            ()=>{navigate('/Projects')}, 10000
+            ()=>{navigate('/Projects')}, 5000
         )
     }
 }

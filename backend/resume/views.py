@@ -1,6 +1,7 @@
 from rest_framework.generics import RetrieveAPIView, ListAPIView
-from .models import Resume, Certificate
-from .serializers import ResumeSerializer, CertificatesListSerializer
+from django.shortcuts import get_object_or_404
+from .models import Resume, Certificate, Skill
+from .serializers import ResumeSerializer, CertificatesListSerializer, SkillSerializer
 
 
 class GetResume(RetrieveAPIView):
@@ -21,3 +22,11 @@ class CertificatesList(ListAPIView):
     serializer_class = CertificatesListSerializer
     queryset = Certificate.objects.all()
 
+
+class RetrieveSkillApi(RetrieveAPIView):
+    serializer_class = SkillSerializer
+    lookup_field = 'id'
+
+    def get_object(self):
+        data = get_object_or_404(Skill, id=self.kwargs['id'])
+        return data

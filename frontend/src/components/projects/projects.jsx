@@ -22,7 +22,7 @@ export default function () {
                     <p>
                         the statuses show whether i finished the project or not.
                     </p>
-                    <h4 onClick={() => fadeByID('hint-1')}>
+                    <h4 style={{cursor: 'pointer'}} onClick={() => fadeByID('hint-1')}>
                         &times;
                     </h4>
                 </div>
@@ -30,9 +30,10 @@ export default function () {
                     <p>
                         tags declare which technologies i used in each project.
                     </p>
-                    <h4 onClick={() => fadeByID('hint-2')}>
+                    <h4 style={{cursor: 'pointer'}} onClick={() => fadeByID('hint-2')}>
                         &times;
                     </h4>
+                {/*    TODO: use django messages framework instead of this*/}
                 </div>
                 <hr/>
                 <Train>Click on Project names for more Details.</Train>
