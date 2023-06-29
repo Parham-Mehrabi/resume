@@ -7,7 +7,7 @@ services:
     container_name: resume_django
     build: .
     expose:
-      - '8000'
+      - '8003'
     env_file:
       - ./.env
     volumes:
@@ -19,7 +19,7 @@ services:
     container_name: blog_nginx
     image: nginx
     ports:
-      - '80:80'
+      - '83:80'
     restart: always
     depends_on:
       - backend
