@@ -9,6 +9,9 @@ class Resume(models.Model):
     language = models.SmallIntegerField(choices=LANGUAGES_CHOICES, default=0)
     body = models.TextField()
 
+    def __str__(self):
+        return f'{self.get_language_display()}'
+
 
 class Skill(models.Model):
     """
