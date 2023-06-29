@@ -17,7 +17,6 @@ class Skill(models.Model):
     """
         a model to define my skills more specifically
     """
-
     TAG_CHOICES = [
         (0, 'django'),
         (1, 'frontend'),
@@ -50,3 +49,4 @@ class Certificate(models.Model):
 
     image = models.ImageField(upload_to='certificates/')
     # TODO: change this path after deploy
+
