@@ -29,12 +29,12 @@ export default function () {
                                 this project : </p>
                             <ul className='list-group overflow-auto parham-scroll rounded-0'>
                                 {project['technologies'].map(skill => {
-                                    return <li className='list-group-item list-group-item-info'
-                                               onClick={() => {
-                                                   navigate('/Resume/' + (skill))
-                                               }}>
+                                    return <li
+                                        className='list-group-item list-group-item-info tech_list'
+                                        onClick={() => {
+                                            navigate('/Resume/' + (skill))
+                                        }}>
                                         {skill}</li>
-
                                 })}
                             </ul>
                         </div>
@@ -56,7 +56,7 @@ export default function () {
                         <div className='border border-info m-3 p-3'>
                             <p className='fw-bolder text text-info text-capitalize'> Project labels
                                 this project : </p>
-                            <ul className='list-group overflow-auto parham-scroll rounded-0'>
+                            <ul className='list-group overflow-auto rounded-0' style={{maxHeight: '200px'}}>
                                 {project['tags'].map(tag => {
                                     return <li className='text text-center list-group-item list-group-item-info'>
                                         {tag}</li>
@@ -68,12 +68,9 @@ export default function () {
                 <Pictures>{id}</Pictures>
             </div>
         </>) : (
-            <>
-                <Loading></Loading>
-            </>
+            <Loading/>
         )
     )
-
 
     async function getProjectDetails() {
         const response = await fetch(baseUrl + 'project/' + id)
@@ -83,6 +80,5 @@ export default function () {
         } else if (response.status === 404) {
             navigate('/projects')
         }
-
     }
 }

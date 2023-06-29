@@ -17,3 +17,9 @@ scrollbar-color: #0d96ff #28b0a5;
 *::-webkit-scrollbar-thumb {
     background-color: #28b0a5;
 }
+.tech_list{
+    cursor: pointer;
+}
+.tech_list:hover{
+    background-color: rgba(19, 102, 121, 0.71);
+}
