@@ -16,7 +16,7 @@ services:
     command: sh ./deploy_command.sh
 
   nginx:
-    container_name: blog_nginx
+    container_name: resume_nginx
     image: nginx
     ports:
       - '83:80'
