@@ -1,0 +1,33 @@
+version: '3.9'
+
+
+services:
+
+  backend:
+    container_name: resume_django
+    build: .
+    expose:
+      - '8000'
+    env_file:
+      - ./.env
+    volumes:
+      - ./backend:/app
+      - resume-static-volume:/app/static_files
+    command: sh ./deploy_command.sh
+
+  nginx:
+    container_name: blog_nginx
+    image: nginx
+    ports:
+      - '80:80'
+    restart: always
+    depends_on:
+      - backend
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - resume-media-volume:/home/app/media
+      - resume-static-volume:/home/app/static
+
+volumes:
+  resume-media-volume:
+  resume-static-volume:
