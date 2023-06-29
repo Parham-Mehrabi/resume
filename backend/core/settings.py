@@ -116,3 +116,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CSRF
+CSRF_TRUSTED_ORIGINS = ["https://parham-webdev.com", "https://www.parham-webdev.com", 'https://*.parham-webdev.com']
