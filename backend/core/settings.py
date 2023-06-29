@@ -6,7 +6,6 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# TODO: move it to env_variables
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
@@ -30,16 +29,11 @@ INSTALLED_APPS = [
     # Package
     'rest_framework',
 
-    # TODO: remove this one
-    "corsheaders",
-
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    # TODO: remove this one for production
-    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -123,10 +117,3 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# TODO: remove this CORS:
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://192.168.106.219:5173",
-]
