@@ -1,6 +1,6 @@
 from rest_framework.generics import RetrieveAPIView, ListAPIView
 from django.shortcuts import get_object_or_404
-from .models import Resume, Certificate, Skill
+from resume.models import Resume, Certificate, Skill
 from .serializers import ResumeSerializer, CertificatesListSerializer, SkillSerializer
 
 
@@ -9,7 +9,8 @@ class GetResume(RetrieveAPIView):
         retrieve my latest resume
     """
     serializer_class = ResumeSerializer
-    queryset = Resume.objects.last()
+    queryset = Resume.objects.last()    # this make problems during migrations
+    # queryset = Resume.objects.all()   # uncomment this line for migrations
 
     def get_object(self):
         return self.queryset

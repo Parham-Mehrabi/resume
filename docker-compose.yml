@@ -13,6 +13,7 @@ services:
     volumes:
       - ./backend:/app
       - resume-static-volume:/app/static_files
+      - resume-media-volume:/app/media
     command: sh ./deploy_command.sh
 
   nginx:
