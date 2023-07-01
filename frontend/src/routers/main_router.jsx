@@ -10,12 +10,12 @@ import base_url from "../contexts/base_url.jsx";
 import IndexPage from '../components/index.jsx'
 import Gallery from "../components/gallery/gallery.jsx";
 import Skills from "../components/skills.jsx";
-
+import Page404 from "../components/page_404.jsx";
 const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path={'/'} element={
                 //TODO: replace light instead of dark when query doesn't match
-                <base_url.Provider value={'http://127.0.0.1:8000/back/'}>
+                <base_url.Provider value={'/back/'}>
                     <user_theme.Provider
                         value={window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark'}>
                         <App/>
@@ -31,8 +31,8 @@ const router = createBrowserRouter(
                     <Route index element={<Projects/>}/>
                     <Route path=':id' element={<ProjectDetails/>}/>
                 </Route>
-                <Route path='/contact' element={<Contact/>}/>
                 <Route path='/Gallery' element={<Gallery/>}/>
+                <Route path='*' element={<Page404/>}/>
             </Route>
         )
     )

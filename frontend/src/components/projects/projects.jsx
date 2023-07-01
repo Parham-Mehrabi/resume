@@ -53,9 +53,8 @@ export default function () {
                             projects && projects[0] ? (
                                 projects.map(p => {
                                     return (
-                                        <tr className='text-center' onClick={() => goToProject(p['id'])} key={p['id']}>
+                                        <tr className='text-center' onClick={() => goToProject(p['id'])} key={p['id']} style={{cursor:'pointer'}}>
                                             <th>{p['name']}</th>
-
                                             <td className='border border-info'>
                                                 <div className='row'>
                                                     {p['tags'].map(s => {
@@ -69,7 +68,7 @@ export default function () {
                                             }>{p['status']}</td>
 
                                             <td>
-                                                github: <a className='link-info' href={p['project_link']}>Project
+                                                github: <a className='link-info' href={p['github_link']}>Project
                                                 Link</a>
                                                 <hr/>
                                                 project link: <a className='link-info' href={p['project_link']}>Github

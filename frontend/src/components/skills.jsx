@@ -29,8 +29,7 @@ export default function () {
                         ) : (
                             <div className='d-flex justify-content-between border-info-subtle border p-2 m-2'>
                                 <h2 className='m-4'>LEVEL</h2>
-                                <h2 className='text mx-4 text-danger fw-bolder my-auto font-monospace shadow shadow-lg border-bottom border-info'>GOD
-                                    tier </h2>
+                                <h2 className='text mx-4 text-danger fw-bolder my-auto font-monospace shadow shadow-lg border-bottom border-info'>proficient</h2>
                             </div>
                         )
                     )}
