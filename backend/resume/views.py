@@ -10,7 +10,7 @@ class GetResume(RetrieveAPIView):
     """
     serializer_class = ResumeSerializer
     queryset = Resume.objects.last()    # this make problems during migrations
-    # queryset = Resume.objects.all()   # uncomment this line for migrations
+    #queryset = Resume.objects.all()   # uncomment this line for migrations
 
     def get_object(self):
         return self.queryset
