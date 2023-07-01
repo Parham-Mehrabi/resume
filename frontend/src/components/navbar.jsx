@@ -26,10 +26,6 @@ export default function Navbar() {
                             <NavLink className='nav-link' aria-current="page" to="/Resume">About me</NavLink>
                         </li>
                         <li className='nav-item'>
-                            <NavLink className='nav-link' to="/Contact" tabIndex="-1" aria-disabled="true">Contact
-                                me</NavLink>
-                        </li>
-                        <li className='nav-item'>
                             <NavLink className='nav-link' to="/Gallery" tabIndex="-1" aria-disabled="true">Gallery</NavLink>
                         </li>
                     </ul>
