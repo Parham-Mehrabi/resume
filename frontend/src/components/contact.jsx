@@ -3,7 +3,7 @@ export default function Contact() {
         <div className='container'>
 
             <div className='table-responsive p-0 m-0 p-sm-1 m-sm-1 p-md-3 m-md-3'>
-                <table className='table table-striped align-middle table-hover table-borderless border border-success-subtle border-2'>
+                <table className='table align-middle table-hover table-borderless border border-success-subtle border-2'>
                     <tbody>
                     <tr>
                         <td className='text-center'>Email Address</td>
