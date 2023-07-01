@@ -2,6 +2,7 @@ import {useContext, useEffect, useState} from "react";
 import base_url from "../../contexts/base_url.jsx";
 import {useNavigate} from "react-router-dom";
 import Train from "../../elements/train.jsx";
+
 export default function () {
     const baseUrl = useContext(base_url)
     useEffect(() => {
@@ -13,10 +14,10 @@ export default function () {
         <>
             <div className='container'>
                 <div className='text-center text text-info m-2 p-2 text-capitalize border-info rounded-1'
-                     onClick={()=>scrollTOTable()}
+                     onClick={() => scrollTOTable()}
                      style={{border: 'dashed 1px'}}
                 >
-                <small>click on each project name to go to details</small>
+                    <small>click on each project name to go to details</small>
                 </div>
                 <div className="alert alert-info small d-flex justify-content-between align-middle" id='hint-1'>
                     <p>
@@ -33,13 +34,14 @@ export default function () {
                     <h4 style={{cursor: 'pointer'}} onClick={() => fadeByID('hint-2')}>
                         &times;
                     </h4>
-                {/*    TODO: use django messages framework instead of this*/}
+                    {/*    TODO: use django messages framework instead of this*/}
                 </div>
                 <hr/>
                 <Train>Click on Project names for more Details.</Train>
                 <hr className='m-0 p-0'/>
                 <div className="table-responsive">
-                    <table className='table table-dark table-striped text-center align-middle table-hover' id='da_table'>
+                    <table className='table table-dark table-striped text-center align-middle table-hover'
+                           id='da_table'>
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -53,12 +55,14 @@ export default function () {
                             projects && projects[0] ? (
                                 projects.map(p => {
                                     return (
-                                        <tr className='text-center' onClick={() => goToProject(p['id'])} key={p['id']} style={{cursor:'pointer'}}>
+                                        <tr className='text-center' onClick={() => goToProject(p['id'])} key={p['id']}
+                                            style={{cursor: 'pointer'}}>
                                             <th>{p['name']}</th>
                                             <td className='border border-info'>
                                                 <div className='row'>
                                                     {p['tags'].map(s => {
-                                                        return <p className='col-12 col-xs-8 col-sm-5 col-md-3 col-lg-2' key={s}>{s}</p>
+                                                        return <p className='col-12 col-xs-8 col-sm-5 col-md-3 col-lg-2'
+                                                                  key={s}>{s}</p>
                                                     })}
                                                 </div>
                                             </td>
@@ -79,8 +83,18 @@ export default function () {
                                     )
                                 })
 
-                            ) : null
-                        //     TODO: add loader
+                            ) : (
+                                <div className='container-fluid'>
+                                    <div className='border-info-subtle border p-2 m-2'>
+                                        <div className='d-flex justify-content-center p-3 m-3'>
+                                            <div className="spinner-border text-info" role="status"></div>
+                                        </div>
+                                        <h3 className='text text-center text-info'>
+                                            LOADING PROJECTS . . .
+                                        </h3>
+                                    </div>
+                                </div>
+                            )
                         }
                         </tbody>
                     </table>
@@ -107,7 +121,8 @@ export default function () {
             element.classList.add('d-none');
         }, 1500);
     }
-    function scrollTOTable(){
+
+    function scrollTOTable() {
         let table = document.getElementById('da_table')
         table.scrollIntoView()
     }

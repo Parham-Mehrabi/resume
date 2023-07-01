@@ -103,8 +103,18 @@ export default function Resume() {
                             </div>
                         </div>
                     </div>
-                ) : null
-                    //TODO: create a loading something for here
+                ) : (
+                    <div className='container-fluid'>
+                        <div className='border-info-subtle border p-2 m-2'>
+                            <div className='d-flex justify-content-center p-3 m-3'>
+                                <div className="spinner-border text-info" role="status"></div>
+                            </div>
+                            <h3 className='text text-center text-info'>
+                                LOADING RESUME . . .
+                            </h3>
+                        </div>
+                    </div>
+                )
                 }
 
             </div>
